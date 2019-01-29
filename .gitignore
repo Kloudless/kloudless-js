@@ -1,0 +1,13 @@
+# tools, IDE
+.nvmrc
+.vscode
+yarn-error.log
+
+# project files
+.DS_Store
+dist
+node_modules
+!test/dist
+test/unit/coverage_*
+.npmignore
+*.tgz

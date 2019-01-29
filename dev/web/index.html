@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Kloudless JS SDK</title>
+  </head>
+  <body>
+    <h1>JS SDK Test page</h1>
+    <p>
+      Scope: <input type="text" id="scope" value="any:normal"/>
+      <button onClick="connectAccount()">Connect Account</button>
+    </p>
+    <h2>Test request</h2>
+    <p>
+      API Version: 
+      <select id="api-version" onchange="selectApiVersion(this)">
+        <option value="2">v2</option>
+        <option value="1" selected>v1</option>
+      </select>
+      <br/>
+      <select id="obj" onchange="selectObj(this)"></select>
+      <select id="method">
+        <option value="get">GET</option>
+        <option value="post">POST</option>
+        <option value="put">PUT</option>
+        <option value="patch">PATCH</option>
+        <option value="delete">DELETE</option>
+      </select><br/>
+      <textarea id="options"
+            cols="80" rows="10"
+            style="border: 1px solid black"
+      >{}</textarea>
+      <button onClick="makeRequest()">Make request</button>
+    </p>
+    <h2>Log</h2>
+    <p>
+      <textarea id="message"
+            cols="100" rows="20"
+            style="border: 1px solid black"
+            readonly="readonly"
+      ></textarea>
+    </p>  
+    <h2>Object data</h2>
+    <pre id="objData">
+
+    </pre>
+  </body>
+</html>
