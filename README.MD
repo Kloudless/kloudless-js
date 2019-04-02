@@ -2,7 +2,7 @@
 
 JavaScript SDK for [Kloudless API](https://kloudless.com).
 
-**You need to sign up and create a application first before using this SDK.**
+**You need to sign up and create an application first before using this SDK.**
 
 For convenience, the SDK Object will be referred as `kloudless`
 throughout this document.
