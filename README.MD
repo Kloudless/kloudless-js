@@ -1,8 +1,10 @@
 # Kloudless JavaScript SDK
 
-JavaScript SDK for [Kloudless API](https://kloudless.com).
+JavaScript SDK for the [Kloudless API](https://kloudless.com).
 
-**You need to sign up and create an application first before using this SDK.**
+Kloudless enables apps to integrate with several third-party services with a single integration.
+
+**Sign up for a [Kloudless Application](https://kloudless.com) first before using this SDK.**
 
 For convenience, the SDK Object will be referred as `kloudless`
 throughout this document.
