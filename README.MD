@@ -11,6 +11,7 @@ throughout this document.
 
 ## Table of Contents
 * [Installation](#installation)
+* [Full SDK Reference](#full-sdk-reference)
 * [Getting Started](#getting-started)
   * [Initializing Account Object](#initializing-account-object)
   * [Making API Requests](#making-api-requests)
@@ -32,7 +33,6 @@ throughout this document.
   * [Verifying Account Bearer Tokens](#verifying-account-bearer-tokens)
   * [Making Arbitrary API Requests](#making-arbitrary-api-requests)
   * [Setting the API Version](#setting-the-api-version)
-* [Full SDK Reference](#full-sdk-reference)
 * [Development](#development)
 * [Build](#build)
 * [Test](#test)
@@ -60,6 +60,11 @@ throughout this document.
   ```
   The SDK Object will be available at `window.Kloudless.sdk`
 
+## Full SDK Reference
+
+The **[SDK Reference](REFERENCE.MD)** contains the full description for each
+property and method in the SDK. However, we recommend you proceed through
+the steps in the **Getting Started** section below first.
 
 ## Getting Started
 
@@ -663,11 +668,6 @@ kloudless.setApiVersion() method to change the API Version.
 // change API Version to v2
 kloudless.setApiVersion(2);
 ```
-
-### Full SDK Reference
-
-The [SDK Reference](REFERENCE.MD) contains the full description for each
-property and method.
 
 ## Development
 
