@@ -18,6 +18,7 @@ function generateConfig(env = {}) {
     },
     externals: {
       crypto: 'crypto',
+      stream: 'stream',
       /**
        * axios-node will be used when running in Nodejs environment
        * (see lib/request.js).
@@ -26,6 +27,9 @@ function generateConfig(env = {}) {
        * imported.
        */
       'axios-node': 'axios',
+    },
+    node: {
+      Buffer: false,
     },
     output: env.output,
     module: {

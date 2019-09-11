@@ -22,7 +22,8 @@ throughout this document.
     * [Resource List](#resource-list)
       * [Resource Pagination](#resource-pagination)
       * [Iterate through all resources](#iterate-through-all-resources)
-    * [Download binary](#download-binary)
+    * [Download Binary Data](#download-binary-data)
+    * [Upload Binary Data](#upload-binary-data)
     * [Generic Response](#generic-response)
   * [Making Requests from Response Objects](#making-requests-from-response-objects)
   * [Handling Request Failures](#handling-request-failures)
@@ -386,7 +387,7 @@ function onUserClickCleanAll() {
 ```
 
 
-#### Download binary
+#### Download Binary Data
 
 Certain endpoints like thumbnails or file content will return binaries. The
 responses will contain [Binary](REFERENCE.MD#binary) objects.
@@ -425,6 +426,62 @@ The `data` property will be different depending on app's environment:
     });
   });
   ```
+
+#### Upload Binary Data
+
+Certain endpoints require you to send binary data as request data, like when
+[uploading files](https://developers.kloudless.com/docs/latest/storage#files-upload-a-file).
+
+  - The SDK supports file uploads from a browser by sending the File object
+    obtained from the file input of a form. For example, a form with file input
+    id="fileInput" would send the data as request data:
+    ```js
+    const fileInput = document.getElementById('fileInput');
+    if (fileInput.files.length) {
+      const file = fileInput.files[0];
+      account.post({
+        url: 'storage/files',
+        headers: {
+          'X-Kloudless-Metadata': {
+            parent_id: 'root',
+            name: file.name
+          }
+        },
+        params: {
+          overwrite: true
+        },
+        data: file
+      }).then((resource) => {
+        console.log('File uploaded: ', resource.data);
+      });
+    }
+    ```
+
+  - The SDK also supports file uploads from Node.js by reading the file into a
+    stream object and then sending the stream object as request data:
+    ```js
+    const fs = require('fs');
+    const path = require('path');
+    const filename = 'foo.png';
+    const stream = fs.createReadStream(path.resolve(__dirname, filename));
+    account.post({
+      url: 'storage/files',
+      headers: {
+        'X-Kloudless-Metadata': {
+          parent_id: 'root',
+          name: filename
+        }
+      },
+      params: {
+        overwrite: true
+      },
+      data: stream
+    }).then((resource) => {
+      console.log('File uploaded: ', resource.data);
+    });
+    ```
+  Check [Request Options](REFERENCE.MD#request-options) for other supported
+  data types you can use in `options.data` to upload files.
 
 #### Generic Response
 
