@@ -680,7 +680,7 @@ BASE_URL=<base_url> KLOUDLESS_APP_ID=<app_id> npm run dev_web
 ```
 - Node.js
 ```bash
-BASE_URL=<base_url> KLOUDLESS_APP_ID=<app_id> KLOUDLESS_APK_KEY=<api_key> </api_key>npm run dev_node
+BASE_URL=<base_url> KLOUDLESS_APP_ID=<app_id> KLOUDLESS_API_KEY=<api_key> npm run dev_node
 ```
 **Note**: Currently no hot reloading is provided for Nodejs development
 environment.
