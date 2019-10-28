@@ -37,6 +37,7 @@ throughout this document.
 * [Development](#development)
 * [Build](#build)
 * [Test](#test)
+* [Changelog](CHANGELOG.md)
 
 ## Installation
 - Using Node.js or webpack:
