@@ -74,7 +74,7 @@ An [Exception](#exception) object is thrown if the request has failed.
     `/accounts/{account_id}/cal/calenders/{calendar_id}`,
     you only need to pass `events` for `cal/calendars/{calendar_id}/events`.
   * __DO NOT__ include query params in URL, use `params` option instead.
-- `headers`: _Optional_: Object  
+- `headers`: _Optional_: Object[key: (String|Object)]  
   Request headers. Some of common headers used for Kloudless API:
   - [X-Kloudless-Raw-Headers](https://developers.kloudless.com/docs/latest/team#team)
   - [X-Kloudless-Raw-Data](https://developers.kloudless.com/docs/latest/core#api-wide-options)
@@ -83,9 +83,19 @@ An [Exception](#exception) object is thrown if the request has failed.
     _Required_ if you are making request from `kloudless` object.
     _Optional_ for the other objects, as this header will be automatically
     filled.
+  If the header value is an object, the SDK will attempt to convert the object
+  into a string of `JSON.stringify()`. Hence, for JSON string headers like
+  [X-Kloudless-Metadata](https://developers.kloudless.com/docs/v1/storage#files-upload-a-file),
+  you can just pass an object instead of a string.
 - `data`: _Optional_: Object  
-  Request body, if supported by the request method.
-- `params`: _Optional_: Object  
+  Request body, if supported by the request method. The object should be
+  one of the following types:
+  - For JSON data, use a plain object
+  - For binary contents (e.g. uploading file for POST `storage/files`), use
+    an instance of listed classes or their child classes below:
+    - `[web]`: `Blob`, `ArrayBuffer`
+    - `[node]`: `Buffer`, `stream.Readable`
+- `params`: _Optional_: Object[key: (String)]
   Query parameters.
 - `wrapResponse`: _Optional_: Object  
   If `false`, resolve promise with axios response object instead of a
