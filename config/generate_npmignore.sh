@@ -4,3 +4,5 @@ cp .gitignore .npmignore
 # so that npm will pick these two when packing
 echo '!.gitignore' >> .npmignore
 echo '!dist' >> .npmignore
+# remove .git from the output package
+echo '.git' >> .npmignore
