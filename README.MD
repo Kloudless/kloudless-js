@@ -169,7 +169,7 @@ authorize their accounts using OAuth 2.0.
 - Node.js: (Using [Express](https://expressjs.com/) as an example):
   ```js
   const express = require('express');
-  const kloudless require('@kloudless/kloudless');
+  const kloudless = require('@kloudless/kloudless');
 
   const app = express();
 
@@ -410,7 +410,7 @@ The `data` property will be different depending on app's environment:
 - In Node.js, it is a readable Stream Object passed from axios
   ```js
   const express = require('express');
-  const kloudless require('@kloudless/kloudless');
+  const kloudless = require('@kloudless/kloudless');
 
   const app = express();
 
